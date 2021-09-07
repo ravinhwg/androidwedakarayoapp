@@ -11,8 +11,11 @@
 ***REMOVED***,
   "dependencies": {
     "@react-native-firebase/app": "^12.7.5",
+    "@react-navigation/native": "^6.0.2",
     "react": "17.0.1",
-    "react-native": "0.64.2"
+    "react-native": "0.64.2",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.6.0"
 ***REMOVED***,
   "devDependencies": {
     "@babel/core": "^7.12.9",

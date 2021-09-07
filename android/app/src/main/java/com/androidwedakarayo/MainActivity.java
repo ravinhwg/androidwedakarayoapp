@@ -1,6 +1,8 @@
 package com.***REMOVED***;
 
+import android.os.Bundle;
 import com.facebook.react.ReactActivity;
+
 
 public class MainActivity extends ReactActivity {
 
@@ -12,4 +14,8 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "***REMOVED***";
 ***REMOVED***
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
 }
