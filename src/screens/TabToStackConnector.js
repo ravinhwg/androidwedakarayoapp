@@ -4,6 +4,9 @@ import CatagoryScreen from './CatagoryScreen';
 import HomeScreen from './HomeScreen';
 import SavedScreen from './SavedScreen';
 import {CONSTANTS} from '../utils/constants';
+import HomeIcon from '../components/Icons/HomeIcon';
+import CatagoriesIcon from '../components/Icons/CatagoriesIcon';
+import SavedIcon from '../components/Icons/SavedIcon';
 const Tab = createBottomTabNavigator();
 
 function TabToStackConnector() {
@@ -16,6 +19,7 @@ function TabToStackConnector() {
           headerShown: false,
           tabBarLabel: 'Home',
           tabBarActiveTintColor: CONSTANTS.accentColor,
+          tabBarIcon: ({color}) => <HomeIcon color={color} />,
       ***REMOVED***}
       />
       <Tab.Screen
@@ -25,6 +29,7 @@ function TabToStackConnector() {
           headerShown: false,
           tabBarLabel: 'Catagories',
           tabBarActiveTintColor: CONSTANTS.accentColor,
+          tabBarIcon: ({color}) => <CatagoriesIcon color={color} />,
       ***REMOVED***}
       />
       <Tab.Screen
@@ -34,6 +39,7 @@ function TabToStackConnector() {
           headerShown: false,
           tabBarLabel: 'Saved',
           tabBarActiveTintColor: CONSTANTS.accentColor,
+          tabBarIcon: ({color}) => <SavedIcon color={color} />,
       ***REMOVED***}
       />
     </Tab.Navigator>
