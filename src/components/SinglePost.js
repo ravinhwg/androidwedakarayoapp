@@ -1,57 +1,83 @@
 /* eslint-disable react-native/no-inline-styles */
+import {useNavigation} from '@react-navigation/core';
 import React from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Pressable,
+} from 'react-native';
 import useDarkMode from '../utils/hooks/useDarkMode';
 import makeDateReadable from '../utils/makeDateReadable';
 
 const {height, width} = Dimensions.get('window');
 
-export default function SinglePost() {
+export default function SinglePost({
+  title,
+  body,
+  image,
+  date,
+  primary_tag,
+  primary_author,
+  html,
+  excerpt,
+  readingTime,
+  publishedDate,
+}) {
   const isDarkMode = useDarkMode();
+  const navigation = useNavigation();
   const removeNewLine = text => {
     return text.replace(/\n/g, '').trim();
 ***REMOVED***;
   return (
-    <View
+    <Pressable
+      android_ripple={{
+        color: 'rgba(43, 182, 115, 0.2)',
+        radius: 300,
+        borderless: false,
+        foreground: true,
+    ***REMOVED***}
+      onPress={() => {
+        navigation.navigate('ArticleWebView', {
+          html,
+          title,
+          primary_tag,
+          primary_author,
+          publishedDate,
+          image,
+          readingTime,
+      ***REMOVED***);
+    ***REMOVED***}
       style={[
         styles.container,
         {backgroundColor: isDarkMode ? '#000000' : '#fff'},
       ]}>
       <Image
         source={{
-          uri: 'https://***REMOVED***.com/content/images/2021/09/Samsung-plans-to-launch-its-576MP-camera-sensor-in-four-years.jpg',
+          uri: image,
       ***REMOVED***}
         style={styles.image}
       />
       <View style={styles.contentView}>
         <View style={styles.dateReadTimeUnit}>
           <Text style={styles.dateReadTime} numberOfLines={5}>
-            {makeDateReadable('2020-09-20T00:00:00.000Z')}
+            {makeDateReadable(publishedDate)}
           </Text>
           <Text style={styles.dateReadTime} numberOfLines={5}>
             {` • `}
           </Text>
           <Text style={styles.dateReadTime} numberOfLines={5}>
-            1 min read
+            {readingTime} min read
           </Text>
         </View>
-        <Text style={styles.headingText}>
-          ඉදිරි වසර 4 ඇතුලතදී Samsung සමාගම විසින් මිනිස් ඇසට සමාන 576MP කැමරා
-          සෙන්සර් එකක් එලිදැක්වීමට සූදානම් වේ.
-        </Text>
-
+        <Text style={styles.headingText}>{title}</Text>
         <Text style={styles.excerptText} numberOfLines={5}>
-          {removeNewLine(`දකුණු කොරියානු තාක්ෂණික දැවැන්තයා වෙන Samsung සමාගම විසින් ඔවුන්ගේ
-          Camera\nSensors වැඩිදියුණු කිරිම පිළිබඳ මේ වෙන විටත් කටයුතු කරමින්
-          ඉන්නවා. ඒ අනුව පසුගිය\nසතියේදි ඔවුන් විසින් ලොව ප්‍රථම 200MP Smart
-          Phone Camera Sensor එක ලෙස Samsung\nISOCELL HP1 Sensor එක එළිදැක්වීමට
-          කටයුතු කරනු ලැබුවා.\n\nSamsung සමාගම විසින් මේ වන 600MP පමණ වු Camera
-          Sensor එකක් පිළිබඳ කටයුතු කරමින්\nසිටින බව ඔවුන් විසින් නිල වශයෙන්
-          වාර්තා කර තිබෙනවා. ඒ SEMI යුරෝපා සමුළුවේදි\nSamsung Electronics සමාගමේ
-          Automotive Sensor අංශයේ Seni`)}
+          {removeNewLine(excerpt)}
         </Text>
       </View>
-    </View>
+    </Pressable>
   );
 }
 
@@ -60,8 +86,8 @@ const styles = StyleSheet.create({
     width: width - 20,
     marginVertical: 10,
     borderRadius: 10,
-    elevation: 5,
     alignSelf: 'center',
+    elevation: 2,
 ***REMOVED***,
   image: {
     width: width - 20,
@@ -73,7 +99,7 @@ const styles = StyleSheet.create({
     padding: 10,
 ***REMOVED***,
   headingText: {
-    width: width - 20,
+    width: width - 30,
     fontSize: 20,
     fontWeight: 'bold',
     color: 'black',

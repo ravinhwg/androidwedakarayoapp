@@ -1,59 +1,85 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {View, Text, StyleSheet, Image, Dimensions} from 'react-native';
+import {useNavigation} from '@react-navigation/core';
+import React, {useState} from 'react';
+import {useEffect} from 'react';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  Dimensions,
+  Pressable,
+} from 'react-native';
+import {useQuery} from 'react-query';
+import {grabFeaturedArticle} from '../API/apiConnectors';
 import useDarkMode from '../utils/hooks/useDarkMode';
 import makeDateReadable from '../utils/makeDateReadable';
 
 const {height, width} = Dimensions.get('window');
 
 export default function HeroPost() {
+  const {data, isLoading} = useQuery('grabGhostFeatured', grabFeaturedArticle);
+  const [articleData, setArticleData] = useState({});
+  const navigation = useNavigation();
   const isDarkMode = useDarkMode();
   const removeNewLine = text => {
     return text.replace(/\n/g, '').trim();
 ***REMOVED***;
+  useEffect(() => {
+    if (data) {
+      setArticleData(data.posts[0]);
+  ***REMOVED***
+***REMOVED***, [data]);
   return (
-    <View
-      style={[
-        styles.container,
-        {backgroundColor: isDarkMode ? '#000000' : '#fff'},
-      ]}>
-      <Image
-        source={{
-          uri: 'https://***REMOVED***.com/content/images/2021/09/Samsung-plans-to-launch-its-576MP-camera-sensor-in-four-years.jpg',
-      ***REMOVED***}
-        style={styles.image}
-      />
-      <View style={styles.contentView}>
-        <View style={styles.heroText}>
-          <View style={styles.dateReadTimeUnit}>
-            <Text style={styles.dateReadTime} numberOfLines={5}>
-              {makeDateReadable('2020-09-20T00:00:00.000Z')}
-            </Text>
-            <Text style={styles.dateReadTime} numberOfLines={5}>
-              {` • `}
-            </Text>
-            <Text style={styles.dateReadTime} numberOfLines={5}>
-              1 min read
-            </Text>
-          </View>
-          <Text style={styles.headingText} numberOfLines={4}>
-            ඉදිරි වසර 4 ඇතුලතදී Samsung සමාගම විසින් මිනිස් ඇසට සමාන 576MP කැමරා
-            සෙන්සර් එකක් එලිදැක්වීමට සූදානම් වේ.
-          </Text>
+    <>
+      {!isLoading && (
+        <Pressable
+          onPress={() => {
+            navigation.navigate('ArticleWebView', {
+              html: articleData.html,
+              title: articleData.title,
+              primary_tag: articleData.primary_tag,
+              primary_author: articleData.primary_author,
+              publishedDate: articleData.published_at,
+              image: articleData.feature_image,
+              readingTime: articleData.reading_time,
+          ***REMOVED***);
+        ***REMOVED***}
+          style={[
+            styles.container,
+            {backgroundColor: isDarkMode ? '#000000' : '#fff'},
+          ]}>
+          <Image
+            source={{
+              uri: articleData.feature_image,
+          ***REMOVED***}
+            style={styles.image}
+          />
+          <View style={styles.contentView}>
+            <View style={styles.heroText}>
+              <View style={styles.dateReadTimeUnit}>
+                <Text style={styles.dateReadTime} numberOfLines={5}>
+                  {makeDateReadable(articleData.published_at)}
+                </Text>
+                <Text style={styles.dateReadTime} numberOfLines={5}>
+                  {` • `}
+                </Text>
+                <Text style={styles.dateReadTime} numberOfLines={5}>
+                  {articleData.reading_time} min read
+                </Text>
+              </View>
+              <Text style={styles.headingText} numberOfLines={4}>
+                {articleData.title}
+              </Text>
 
-          <Text style={styles.excerptText} numberOfLines={2}>
-            {removeNewLine(`දකුණු කොරියානු තාක්ෂණික දැවැන්තයා වෙන Samsung සමාගම විසින් ඔවුන්ගේ
-          Camera\nSensors වැඩිදියුණු කිරිම පිළිබඳ මේ වෙන විටත් කටයුතු කරමින්
-          ඉන්නවා. ඒ අනුව පසුගිය\nසතියේදි ඔවුන් විසින් ලොව ප්‍රථම 200MP Smart
-          Phone Camera Sensor එක ලෙස Samsung\nISOCELL HP1 Sensor එක එළිදැක්වීමට
-          කටයුතු කරනු ලැබුවා.\n\nSamsung සමාගම විසින් මේ වන 600MP පමණ වු Camera
-          Sensor එකක් පිළිබඳ කටයුතු කරමින්\nසිටින බව ඔවුන් විසින් නිල වශයෙන්
-          වාර්තා කර තිබෙනවා. ඒ SEMI යුරෝපා සමුළුවේදි\nSamsung Electronics සමාගමේ
-          Automotive Sensor අංශයේ Seni`)}
-          </Text>
-        </View>
-      </View>
-    </View>
+              <Text style={styles.excerptText} numberOfLines={2}>
+                {articleData.excerpt}
+              </Text>
+            </View>
+          </View>
+        </Pressable>
+      )}
+    </>
   );
 }
 

@@ -18,7 +18,7 @@ const makeDateReadable = date => {
   return (
     newDate.getDate() +
     ' ' +
-    monthNames[newDate.getMonth() + 1] +
+    monthNames[newDate.getMonth()] +
     ' ' +
     newDate.getFullYear()
   );
