@@ -33,15 +33,11 @@ const CatagoryArticleScreen = ({route}) => {
   const {tagSlug, tagName, tagPostsCount, tagAccentColor} = route.params;
   const [posts, setPosts] = useState([]);
 
-  const {status, data, fetchNextPage, isLoading} = useInfiniteQuery(
-    tagSlug,
-    grabArticlesFromTag,
-    {
-      getNextPageParam: (lastGroup, allGroups) => {
-        return lastGroup.meta.pagination.next || undefined;
-    ***REMOVED***,
+  const {data, fetchNextPage} = useInfiniteQuery(tagSlug, grabArticlesFromTag, {
+    getNextPageParam: (lastGroup, allGroups) => {
+      return lastGroup.meta.pagination.next || undefined;
   ***REMOVED***,
-  );
+***REMOVED***);
   const isFocused = useIsFocused();
 
   useEffect(() => {
@@ -51,7 +47,6 @@ const CatagoryArticleScreen = ({route}) => {
     ***REMOVED***);
   ***REMOVED***
 ***REMOVED***, [data]);
-  console.log('isloading', isLoading);
   const ListEmpty = () => (
     <View
       // eslint-disable-next-line react-native/no-inline-styles
