@@ -7,7 +7,8 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "postversion": "npx react-native-version"
 ***REMOVED***,
   "dependencies": {
     "@react-native-firebase/analytics": "^12.7.5",
