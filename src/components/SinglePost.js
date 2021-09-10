@@ -32,7 +32,7 @@ export default function SinglePost({
   const navigation = useNavigation();
   const removeNewLine = text => {
     return text.replace(/\n/g, '').trim();
-***REMOVED***;
+  };
   return (
     <Pressable
       android_ripple={{
@@ -40,7 +40,7 @@ export default function SinglePost({
         radius: 300,
         borderless: false,
         foreground: true,
-    ***REMOVED***}
+      }}
       onPress={() => {
         navigation.navigate('ArticleWebView', {
           html,
@@ -52,13 +52,13 @@ export default function SinglePost({
           publishedDate,
           image,
           readingTime,
-      ***REMOVED***);
-    ***REMOVED***}
+        });
+      }}
       style={[styles.container, {backgroundColor: '#fff'}]}>
       <Image
         source={{
           uri: image,
-      ***REMOVED***}
+        }}
         style={styles.image}
       />
       <View style={styles.contentView}>
@@ -89,33 +89,33 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     alignSelf: 'center',
     elevation: 2,
-***REMOVED***,
+  },
   image: {
     width: width - 20,
     aspectRatio: 1200 / 630,
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
-***REMOVED***,
+  },
   contentView: {
     padding: 10,
-***REMOVED***,
+  },
   headingText: {
     width: width - 30,
     fontSize: 20,
     fontWeight: 'bold',
     color: 'black',
-***REMOVED***,
+  },
   excerptText: {
     marginTop: 20,
     fontSize: 14,
     color: '#757575',
-***REMOVED***,
+  },
   dateReadTimeUnit: {
     flexDirection: 'row',
     marginTop: 4,
-***REMOVED***,
+  },
   dateReadTime: {
     fontSize: 12,
     color: '#757575',
-***REMOVED***,
+  },
 });

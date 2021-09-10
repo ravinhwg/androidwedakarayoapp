@@ -2,16 +2,16 @@
 {
 	archiveVersion = 1;
 	classes = {
-	***REMOVED***
+	};
 	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* ***REMOVED***Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ***REMOVED***Tests.m */; ***REMOVED***
-		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; ***REMOVED***
-		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; ***REMOVED***
-		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; ***REMOVED***
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; ***REMOVED***
+		00E356F31AD99517003FC87E /* ***REMOVED***Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* ***REMOVED***Tests.m */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -21,21 +21,21 @@
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
 			remoteInfo = ***REMOVED***;
-		***REMOVED***
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* ***REMOVED***Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ***REMOVED***Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; ***REMOVED***
-		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; ***REMOVED***
-		00E356F21AD99517003FC87E /* ***REMOVED***Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ***REMOVED***Tests.m; sourceTree = "<group>"; ***REMOVED***
-		13B07F961A680F5B00A75B9A /* ***REMOVED***.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ***REMOVED***.app; sourceTree = BUILT_PRODUCTS_DIR; ***REMOVED***
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ***REMOVED***/AppDelegate.h; sourceTree = "<group>"; ***REMOVED***
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ***REMOVED***/AppDelegate.m; sourceTree = "<group>"; ***REMOVED***
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ***REMOVED***/Images.xcassets; sourceTree = "<group>"; ***REMOVED***
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ***REMOVED***/Info.plist; sourceTree = "<group>"; ***REMOVED***
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ***REMOVED***/main.m; sourceTree = "<group>"; ***REMOVED***
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ***REMOVED***/LaunchScreen.storyboard; sourceTree = "<group>"; ***REMOVED***
-		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; ***REMOVED***
+		00E356EE1AD99517003FC87E /* ***REMOVED***Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ***REMOVED***Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* ***REMOVED***Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ***REMOVED***Tests.m; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* ***REMOVED***.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ***REMOVED***.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ***REMOVED***/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ***REMOVED***/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ***REMOVED***/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ***REMOVED***/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ***REMOVED***/main.m; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ***REMOVED***/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,14 +45,14 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		***REMOVED***
+		};
 		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		***REMOVED***
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -64,7 +64,7 @@
 			);
 			path = ***REMOVED***Tests;
 			sourceTree = "<group>";
-		***REMOVED***
+		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -72,7 +72,7 @@
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
-		***REMOVED***
+		};
 		13B07FAE1A68108700A75B9A /* ***REMOVED*** */ = {
 			isa = PBXGroup;
 			children = (
@@ -85,7 +85,7 @@
 			);
 			name = ***REMOVED***;
 			sourceTree = "<group>";
-		***REMOVED***
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -93,14 +93,14 @@
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
-		***REMOVED***
+		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Libraries;
 			sourceTree = "<group>";
-		***REMOVED***
+		};
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
@@ -114,7 +114,7 @@
 			sourceTree = "<group>";
 			tabWidth = 2;
 			usesTabs = 0;
-		***REMOVED***
+		};
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,7 +123,7 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
-		***REMOVED***
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,7 +144,7 @@
 			productName = ***REMOVED***Tests;
 			productReference = 00E356EE1AD99517003FC87E /* ***REMOVED***Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		***REMOVED***
+		};
 		13B07F861A680F5B00A75B9A /* ***REMOVED*** */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "***REMOVED***" */;
@@ -163,7 +163,7 @@
 			productName = ***REMOVED***;
 			productReference = 13B07F961A680F5B00A75B9A /* ***REMOVED***.app */;
 			productType = "com.apple.product-type.application";
-		***REMOVED***
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,12 +175,12 @@
 					00E356ED1AD99517003FC87E = {
 						CreatedOnToolsVersion = 6.2;
 						TestTargetID = 13B07F861A680F5B00A75B9A;
-					***REMOVED***
+					};
 					13B07F861A680F5B00A75B9A = {
 						LastSwiftMigration = 1120;
-					***REMOVED***
-				***REMOVED***
-			***REMOVED***
+					};
+				};
+			};
 			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "***REMOVED***" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
@@ -197,7 +197,7 @@
 				13B07F861A680F5B00A75B9A /* ***REMOVED*** */,
 				00E356ED1AD99517003FC87E /* ***REMOVED***Tests */,
 			);
-		***REMOVED***
+		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -207,7 +207,7 @@
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		***REMOVED***
+		};
 		13B07F8E1A680F5B00A75B9A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -216,7 +216,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		***REMOVED***
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -233,7 +233,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
-		***REMOVED***
+		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -252,7 +252,7 @@
 			shellPath = /bin/sh;
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
-		***REMOVED***
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -263,7 +263,7 @@
 				00E356F31AD99517003FC87E /* ***REMOVED***Tests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		***REMOVED***
+		};
 		13B07F871A680F5B00A75B9A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -272,7 +272,7 @@
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-		***REMOVED***
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -280,7 +280,7 @@
 			isa = PBXTargetDependency;
 			target = 13B07F861A680F5B00A75B9A /* ***REMOVED*** */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
-		***REMOVED***
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -307,9 +307,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/***REMOVED***.app/***REMOVED***";
-			***REMOVED***
+			};
 			name = Debug;
-		***REMOVED***
+		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -330,15 +330,15 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/***REMOVED***.app/***REMOVED***";
-			***REMOVED***
+			};
 			name = Release;
-		***REMOVED***
+		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ***REMOVED***/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -355,15 +355,15 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
-			***REMOVED***
+			};
 			name = Debug;
-		***REMOVED***
+		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				INFOPLIST_FILE = ***REMOVED***/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -378,9 +378,9 @@
 				PRODUCT_NAME = ***REMOVED***;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
-			***REMOVED***
+			};
 			name = Release;
-		***REMOVED***
+		};
 		83CBBA201A601CBA00E9B192 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,9 +442,9 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-			***REMOVED***
+			};
 			name = Debug;
-		***REMOVED***
+		};
 		83CBBA211A601CBA00E9B192 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -499,9 +499,9 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
-			***REMOVED***
+			};
 			name = Release;
-		***REMOVED***
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -513,7 +513,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		***REMOVED***
+		};
 		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "***REMOVED***" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -522,7 +522,7 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		***REMOVED***
+		};
 		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "***REMOVED***" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -531,8 +531,8 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		***REMOVED***
+		};
 /* End XCConfigurationList section */
-	***REMOVED***
+	};
 	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
 }

@@ -26,8 +26,8 @@ export default function HeroPost() {
   useEffect(() => {
     if (data) {
       setArticleData(data.posts[0]);
-  ***REMOVED***
-***REMOVED***, [data]);
+    }
+  }, [data]);
   return (
     <>
       {!isLoading && (
@@ -43,13 +43,13 @@ export default function HeroPost() {
               publishedDate: articleData.published_at,
               image: articleData.feature_image,
               readingTime: articleData.reading_time,
-          ***REMOVED***);
-        ***REMOVED***}
+            });
+          }}
           style={[styles.container, {backgroundColor: '#fff'}]}>
           <Image
             source={{
               uri: articleData.feature_image,
-          ***REMOVED***}
+            }}
             style={styles.image}
           />
           <View style={styles.contentView}>
@@ -85,41 +85,41 @@ const styles = StyleSheet.create({
     width: width,
     borderRadius: 10,
     elevation: 5,
-***REMOVED***,
+  },
   image: {
     height: height / 2,
     aspectRatio: 1200 / 630,
-***REMOVED***,
+  },
   contentView: {
     padding: 10,
     position: 'absolute',
     backgroundColor: 'rgba(43, 182, 115, 0.58)',
     height: height / 2,
     aspectRatio: 1200 / 630,
-***REMOVED***,
+  },
   heroText: {
     position: 'absolute',
     top: height / 5,
     padding: 10,
-***REMOVED***,
+  },
   headingText: {
     width: width - 20,
     fontSize: 20,
     fontWeight: 'bold',
     color: 'white',
-***REMOVED***,
+  },
   excerptText: {
     marginTop: 20,
     fontSize: 14,
     width: width - 20,
     color: 'white',
-***REMOVED***,
+  },
   dateReadTimeUnit: {
     flexDirection: 'row',
     marginTop: 4,
-***REMOVED***,
+  },
   dateReadTime: {
     fontSize: 12,
     color: 'white',
-***REMOVED***,
+  },
 });

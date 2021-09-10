@@ -4,5 +4,5 @@ import analytics from '@react-native-firebase/analytics';
 export const logArticleViewed = async article => {
   await analytics().logEvent('article_viewed', {
     article_title: article.title,
-***REMOVED***);
-***REMOVED***
+  });
+};

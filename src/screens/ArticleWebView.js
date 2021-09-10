@@ -36,17 +36,17 @@ function ArticleWebView({route, navigation}) {
   // close webview and go back
   const goBack = () => {
     navigation.goBack();
-***REMOVED***;
+  };
   // open share view
   const openShare = async () => {
-  ***REMOVED***
+    try {
       await Share.share({
         message: url,
-    ***REMOVED***);
-  ***REMOVED***
+      });
+    } catch (e) {
       console.log(e);
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
 
   useEffect(() => {
     // check if the articled is saved
@@ -55,47 +55,47 @@ function ArticleWebView({route, navigation}) {
         if (value !== null) {
           if (value.some(el => el.id === item.id)) {
             setSaved(true);
-        ***REMOVED***
-      ***REMOVED***
-    ***REMOVED***)
+          }
+        }
+      })
       .catch(e => {
         console.log(e);
         ToastAndroid.show(
           'Error while showing saved articles',
           ToastAndroid.SHORT,
-    ***REMOVED***
-    ***REMOVED***);
-***REMOVED***, []);
+        );
+      });
+  }, []);
 
   useEffect(() => {
     // log the article to analytics
     logArticleViewed({title});
-***REMOVED***);
+  });
 
   // save article to database
   const saveArticle = async () => {
-  ***REMOVED***
+    try {
       const currentPosts = await MMKV.getArrayAsync('savedArticles');
       if (currentPosts) {
         const newPosts = [item, ...currentPosts];
         // save to MMKV
         await MMKV.setArrayAsync('savedArticles', newPosts);
-    ***REMOVED*** else {
+      } else {
         // create array if it doesn't exist
         await MMKV.setArrayAsync('savedArticles', [item]);
-    ***REMOVED***
+      }
       ToastAndroid.show('Article Saved', ToastAndroid.SHORT);
       setSaved(true);
-  ***REMOVED***
+    } catch (e) {
       ToastAndroid.shwo(
         'Error Saving Article, please try again',
         ToastAndroid.SHORT,
-  ***REMOVED***
+      );
       console.log(e);
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
   const removeArticle = async () => {
-  ***REMOVED***
+    try {
       const currentPosts = await MMKV.getArrayAsync('savedArticles');
       if (currentPosts) {
         const newPosts = currentPosts.filter(post => post.id !== item.id);
@@ -104,16 +104,16 @@ function ArticleWebView({route, navigation}) {
         // save to MMKV
         await MMKV.setArrayAsync('savedArticles', newPosts);
         ToastAndroid.show('Article Removed', ToastAndroid.SHORT);
-    ***REMOVED***
+      }
       setSaved(false);
-  ***REMOVED***
+    } catch (e) {
       ToastAndroid.show(
         'Error Removing Article, please try again',
         ToastAndroid.SHORT,
-  ***REMOVED***
+      );
       console.log(e);
-  ***REMOVED***
-***REMOVED***;
+    }
+  };
   const html = `<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -127,37 +127,37 @@ function ArticleWebView({route, navigation}) {
         color: #333;
         background-color: #fff;
         word-wrap: break-word;
-    ***REMOVED***
+      }
       img{
         max-width: 100%;
         height: auto;
-    ***REMOVED***
+      }
       p {
         margin: 0 0 10px;
         font-size: 16px;
-    ***REMOVED***
+      }
       a {
         color: #000;
         text-decoration: none;
-    ***REMOVED***
+      }
       a:hover,
       a:focus {
         color: #2a6496;
         text-decoration: underline;
-    ***REMOVED***
+      }
       a:focus {
         outline: thin dotted;
         outline: 5px auto -webkit-focus-ring-color;
         outline-offset: -2px;
-    ***REMOVED***
+      }
       .img-responsive {
         display: block;
         max-width: 100%;
         height: auto;
-    ***REMOVED***
+      }
       .img-rounded {
         border-radius: 6px;
-    ***REMOVED***
+      }
       .img-thumbnail {
         padding: 4px;
         line-height: 1.42857143;
@@ -170,16 +170,16 @@ function ArticleWebView({route, navigation}) {
         display: inline-block;
         max-width: 100%;
         height: auto;
-    ***REMOVED***
+      }
       .img-circle {
         border-radius: 50%;
-    ***REMOVED***
+      }
       hr {
         margin-top: 20px;
         margin-bottom: 20px;
         border: 0;
         border-top: 1px solid #eee;
-    ***REMOVED***
+      }
       .sr-only {
         position: absolute;
         width: 1px;
@@ -189,7 +189,7 @@ function ArticleWebView({route, navigation}) {
         overflow: hidden;
         clip: rect(0, 0, 0, 0);
         border: 0;
-    ***REMOVED***
+      }
       .sr-only-focusable:active,
       .sr-only-focusable:focus {
         position: static;
@@ -198,10 +198,10 @@ function ArticleWebView({route, navigation}) {
         margin: 0;
         overflow: visible;
         clip: auto;
-    ***REMOVED***
+      }
       [role="button"] {
         cursor: pointer;
-    ***REMOVED***
+      }
       h1,
       h2,
       h3,
@@ -218,7 +218,7 @@ function ArticleWebView({route, navigation}) {
         font-weight: 500;
         line-height: 1.1;
         color: inherit;
-    ***REMOVED***
+      }
       h1 small,
       h2 small,
       h3 small,
@@ -246,7 +246,7 @@ function ArticleWebView({route, navigation}) {
         font-weight: normal;
         line-height: 1;
         color: #777;
-    ***REMOVED***
+      }
       h1,
       .h1,
       h2,
@@ -255,7 +255,7 @@ function ArticleWebView({route, navigation}) {
       .h3 {
         margin-top: 20px;
         margin-bottom: 10px;
-    ***REMOVED***
+      }
       h1 small,
       .h1 small,
       h2 small,
@@ -269,7 +269,7 @@ function ArticleWebView({route, navigation}) {
       h3 .small,
       .h3 .small {
         font-size: 65%;
-    ***REMOVED***
+      }
       h4,
       .h4,
       h5,
@@ -278,14 +278,14 @@ function ArticleWebView({route, navigation}) {
       .h6 {
         margin-top: 10px;
         margin-bottom: 10px;
-    ***REMOVED***
+      }
       h4 small,
       .h4 small,
       h5 small,
       .h5 small,
       h6 small,
 
-  ***REMOVED***
+    }
     </style>
   </head>
   <body>
@@ -294,7 +294,7 @@ function ArticleWebView({route, navigation}) {
   <div style="display: flex; flex-direction:row; flex: 1;">
   <img style="height: 50px; width: 50px; border-radius: 100px; margin-bottom: 50px; object-fit: cover" src="${
     author.profile_image
-***REMOVED***" />
+  }" />
   <div>
   <p style=" margin-left: 15px; color: #000;">${author.name}</p>
   <div style="display: flex; flex-direction:row; flex: 1;">
@@ -349,24 +349,24 @@ const styles = StyleSheet.create({
     width,
     backgroundColor: CONSTANTS.accentColor,
     height: height * 0.06,
-***REMOVED***,
+  },
   iconView: {
     height: 30,
     width: 30,
     marginRight: 15,
-***REMOVED***,
+  },
   rightIconContainer: {
     flexDirection: 'row',
-***REMOVED***,
+  },
   leftIconContainer: {
     height: 30,
     width: 30,
     marginLeft: 15,
-***REMOVED***,
+  },
   webViewStyles: {
     width: width,
     padding: 10,
     alignSelf: 'center',
-***REMOVED***,
+  },
 });
 export default ArticleWebView;

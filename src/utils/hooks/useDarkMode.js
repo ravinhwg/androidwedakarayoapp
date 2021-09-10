@@ -6,7 +6,7 @@ export default function useDarkMode() {
   useEffect(() => {
     if (typeof colorScheme !== 'string') {
       return false;
-  ***REMOVED***
+    }
     return colorScheme === 'dark';
-***REMOVED***, [colorScheme]);
+  }, [colorScheme]);
 }

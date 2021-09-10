@@ -21,7 +21,7 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         public boolean getUseDeveloperSupport() {
           return BuildConfig.DEBUG;
-      ***REMOVED***
+        }
 
         @Override
         protected List<ReactPackage> getPackages() {
@@ -30,30 +30,30 @@ public class MainApplication extends Application implements ReactApplication {
           // Packages that cannot be autolinked yet can be added manually here, for example:
           // packages.add(new MyReactNativePackage());
           return packages;
-      ***REMOVED***
+        }
 
         @Override
         protected String getJSMainModuleName() {
           return "index";
-      ***REMOVED***
+        }
 
         @Override
         protected JSIModulePackage getJSIModulePackage() {
             return new RNMMKVJSIModulePackage();
-      ***REMOVED***
-    ***REMOVED***;
+        }
+      };
 
   @Override
   public ReactNativeHost getReactNativeHost() {
     return mReactNativeHost;
-***REMOVED***
+  }
 
   @Override
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
     initializeFlipper(this, getReactNativeHost().getReactInstanceManager());
-***REMOVED***
+  }
 
   /**
    * Loads Flipper in React Native templates. Call this in the onCreate method with something like
@@ -65,7 +65,7 @@ public class MainApplication extends Application implements ReactApplication {
   private static void initializeFlipper(
       Context context, ReactInstanceManager reactInstanceManager) {
     if (BuildConfig.DEBUG) {
-    ***REMOVED***
+      try {
         /*
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
@@ -74,15 +74,15 @@ public class MainApplication extends Application implements ReactApplication {
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);
-    ***REMOVED*** catch (ClassNotFoundException e) {
+      } catch (ClassNotFoundException e) {
         e.printStackTrace();
-    ***REMOVED*** catch (NoSuchMethodException e) {
+      } catch (NoSuchMethodException e) {
         e.printStackTrace();
-    ***REMOVED*** catch (IllegalAccessException e) {
+      } catch (IllegalAccessException e) {
         e.printStackTrace();
-    ***REMOVED*** catch (InvocationTargetException e) {
+      } catch (InvocationTargetException e) {
         e.printStackTrace();
-    ***REMOVED***
-  ***REMOVED***
-***REMOVED***
+      }
+    }
+  }
 }

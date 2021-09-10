@@ -36,17 +36,17 @@ const CatagoryArticleScreen = ({route}) => {
   const {data, fetchNextPage} = useInfiniteQuery(tagSlug, grabArticlesFromTag, {
     getNextPageParam: (lastGroup, allGroups) => {
       return lastGroup.meta.pagination.next || undefined;
-  ***REMOVED***,
-***REMOVED***);
+    },
+  });
   const isFocused = useIsFocused();
 
   useEffect(() => {
     if (data) {
       data.pages[data.pages.length - 1].posts.forEach(post => {
         setPosts(prevState => [...prevState, post]);
-    ***REMOVED***);
-  ***REMOVED***
-***REMOVED***, [data]);
+      });
+    }
+  }, [data]);
   const ListEmpty = () => (
     <View
       // eslint-disable-next-line react-native/no-inline-styles
@@ -55,7 +55,7 @@ const CatagoryArticleScreen = ({route}) => {
         height: height - StatusBar.currentHeight - 150,
         alignItems: 'center',
         justifyContent: 'center',
-    ***REMOVED***}>
+      }}>
       <ActivityIndicator size={70} color={tagAccentColor} animating={true} />
     </View>
   );
@@ -67,8 +67,8 @@ const CatagoryArticleScreen = ({route}) => {
           {tagPostsCount} {tagPostsCount === 1 ? 'POST' : 'POSTS'}
         </Text>
       </View>
-***REMOVED***
-***REMOVED***;
+    );
+  };
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={tagAccentColor} />
@@ -83,34 +83,34 @@ const CatagoryArticleScreen = ({route}) => {
       />
     </View>
   );
-***REMOVED***
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     marginTop: StatusBar.currentHeight || 0,
-***REMOVED***,
+  },
   heroContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     padding: 15,
-***REMOVED***,
+  },
   item: {
     backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-***REMOVED***,
+  },
   title: {
     fontSize: 42,
     color: '#fff',
     fontWeight: 'bold',
     textAlign: 'center',
-***REMOVED***,
+  },
   postCount: {
     fontSize: 18,
     color: '#fff',
-***REMOVED***,
+  },
 });
 
 export default CatagoryArticleScreen;

@@ -22,6 +22,6 @@ const makeDateReadable = date => {
     ' ' +
     newDate.getFullYear()
   );
-***REMOVED***
+};
 
 export default makeDateReadable;

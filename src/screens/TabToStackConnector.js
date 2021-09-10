@@ -20,7 +20,7 @@ function TabToStackConnector() {
           tabBarLabel: 'Home',
           tabBarActiveTintColor: CONSTANTS.accentColor,
           tabBarIcon: ({color}) => <HomeIcon color={color} />,
-      ***REMOVED***}
+        }}
       />
       <Tab.Screen
         name="CatagoryScreen"
@@ -32,10 +32,10 @@ function TabToStackConnector() {
           headerTintColor: 'white',
           headerStyle: {
             backgroundColor: CONSTANTS.accentColor,
-        ***REMOVED***,
+          },
           tabBarActiveTintColor: CONSTANTS.accentColor,
           tabBarIcon: ({color}) => <CatagoriesIcon color={color} />,
-      ***REMOVED***}
+        }}
       />
       <Tab.Screen
         name="SavedScreen"
@@ -47,10 +47,10 @@ function TabToStackConnector() {
           headerTintColor: 'white',
           headerStyle: {
             backgroundColor: CONSTANTS.accentColor,
-        ***REMOVED***,
+          },
           tabBarActiveTintColor: CONSTANTS.accentColor,
           tabBarIcon: ({color}) => <SavedIcon color={color} />,
-      ***REMOVED***}
+        }}
       />
     </Tab.Navigator>
   );

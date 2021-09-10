@@ -34,17 +34,17 @@ function HomeScreen() {
     {
       getNextPageParam: (lastGroup, allGroups) => {
         return lastGroup.meta.pagination.next || undefined;
-    ***REMOVED***,
-  ***REMOVED***,
+      },
+    },
   );
 
   useEffect(() => {
     if (data) {
       data.pages[data.pages.length - 1].posts.forEach(post => {
         setPosts(prevState => [...prevState, post]);
-    ***REMOVED***);
-  ***REMOVED***
-***REMOVED***, [data]);
+      });
+    }
+  }, [data]);
 
   return (
     <View style={styles.container}>
@@ -79,11 +79,11 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-***REMOVED***,
+  },
   innerContainer: {
     flex: 1,
-***REMOVED***,
+  },
   contentContainer: {
     justifyContent: 'center',
-***REMOVED***,
+  },
 });

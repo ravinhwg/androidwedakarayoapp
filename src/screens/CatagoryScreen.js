@@ -33,16 +33,16 @@ const CatagoryScreen = () => {
     {
       getNextPageParam: (lastGroup, allGroups) => {
         return lastGroup.meta.pagination.next || undefined;
-    ***REMOVED***,
-  ***REMOVED***,
+      },
+    },
   );
   useEffect(() => {
     if (data) {
       data.pages[data.pages.length - 1].tags.forEach(tag => {
         setTags(prevState => [...prevState, tag]);
-    ***REMOVED***);
-  ***REMOVED***
-***REMOVED***, [data]);
+      });
+    }
+  }, [data]);
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
@@ -61,24 +61,24 @@ const CatagoryScreen = () => {
       )}
     </SafeAreaView>
   );
-***REMOVED***
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-***REMOVED***,
+  },
   item: {
     backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-***REMOVED***,
+  },
   title: {
     fontSize: 32,
-***REMOVED***,
+  },
   contentContainer: {
     alignItems: 'center',
-***REMOVED***,
+  },
 });
 
 export default CatagoryScreen;

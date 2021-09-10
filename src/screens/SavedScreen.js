@@ -37,9 +37,9 @@ const SavedScreen = () => {
     MMKV.getArrayAsync('savedArticles').then(value => {
       console.log(value.length);
       setData(value);
-  ***REMOVED***);
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-***REMOVED***, [isFocused]);
+  }, [isFocused]);
 
   const ListEmpty = () => {
     return (
@@ -51,8 +51,8 @@ const SavedScreen = () => {
           Saved articles will be displayed here!
         </Text>
       </View>
-***REMOVED***
-***REMOVED***;
+    );
+  };
   return (
     <SafeAreaView style={styles.container}>
       {!data.length ? (
@@ -66,32 +66,32 @@ const SavedScreen = () => {
       )}
     </SafeAreaView>
   );
-***REMOVED***
+};
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-***REMOVED***,
+  },
   item: {
     backgroundColor: '#f9c2ff',
     padding: 20,
     marginVertical: 8,
     marginHorizontal: 16,
-***REMOVED***,
+  },
   title: {
     fontSize: 32,
-***REMOVED***,
+  },
   emptyText: {
     width: width - 140,
     textAlign: 'center',
     fontSize: 18,
     fontWeight: 'bold',
-***REMOVED***,
+  },
   emptyContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-***REMOVED***,
+  },
 });
 
 export default SavedScreen;

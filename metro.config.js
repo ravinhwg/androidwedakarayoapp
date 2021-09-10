@@ -11,7 +11,7 @@ module.exports = {
       transform: {
         experimentalImportSupport: false,
         inlineRequires: true,
-    ***REMOVED***,
-  ***REMOVED***),
-***REMOVED***,
-***REMOVED***
+      },
+    }),
+  },
+};
