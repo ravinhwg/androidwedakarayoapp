@@ -54,10 +54,7 @@ export default function SinglePost({
           readingTime,
       ***REMOVED***);
     ***REMOVED***}
-      style={[
-        styles.container,
-        {backgroundColor: isDarkMode ? '#000000' : '#fff'},
-      ]}>
+      style={[styles.container, {backgroundColor: '#fff'}]}>
       <Image
         source={{
           uri: image,

@@ -45,10 +45,7 @@ export default function HeroPost() {
               readingTime: articleData.reading_time,
           ***REMOVED***);
         ***REMOVED***}
-          style={[
-            styles.container,
-            {backgroundColor: isDarkMode ? '#000000' : '#fff'},
-          ]}>
+          style={[styles.container, {backgroundColor: '#fff'}]}>
           <Image
             source={{
               uri: articleData.feature_image,
