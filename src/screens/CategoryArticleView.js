@@ -1,17 +1,20 @@
 /* eslint-disable react-hooks/exhaustive-deps */
+import {useIsFocused} from '@react-navigation/core';
 import React, {useState, useEffect} from 'react';
 import {
-  SafeAreaView,
   View,
   FlatList,
   StyleSheet,
   Text,
   StatusBar,
+  ActivityIndicator,
+  Dimensions,
 } from 'react-native';
 import {useInfiniteQuery} from 'react-query';
 import {grabArticlesFromTag} from '../API/apiConnectors';
 import SinglePost from '../components/SinglePost';
 
+const {height} = Dimensions.get('window');
 const CatagoryArticleScreen = ({route}) => {
   const renderItem = ({item}) => (
     <SinglePost
@@ -30,7 +33,7 @@ const CatagoryArticleScreen = ({route}) => {
   const {tagSlug, tagName, tagPostsCount, tagAccentColor} = route.params;
   const [posts, setPosts] = useState([]);
 
-  const {status, data, fetchNextPage} = useInfiniteQuery(
+  const {status, data, fetchNextPage, isLoading} = useInfiniteQuery(
     tagSlug,
     grabArticlesFromTag,
     {
@@ -39,6 +42,7 @@ const CatagoryArticleScreen = ({route}) => {
     ***REMOVED***,
   ***REMOVED***,
   );
+  const isFocused = useIsFocused();
 
   useEffect(() => {
     if (data) {
@@ -46,8 +50,20 @@ const CatagoryArticleScreen = ({route}) => {
         setPosts(prevState => [...prevState, post]);
     ***REMOVED***);
   ***REMOVED***
-***REMOVED***, [data]);
-
+***REMOVED***, [data, isFocused]);
+  console.log('isloading', isLoading);
+  const ListEmpty = () => (
+    <View
+      // eslint-disable-next-line react-native/no-inline-styles
+      style={{
+        flex: 1,
+        height: height - StatusBar.currentHeight - 150,
+        alignItems: 'center',
+        justifyContent: 'center',
+    ***REMOVED***}>
+      <ActivityIndicator size={70} color={tagAccentColor} animating={true} />
+    </View>
+  );
   const Header = () => {
     return (
       <View style={[styles.heroContainer, {backgroundColor: tagAccentColor}]}>
@@ -57,16 +73,18 @@ const CatagoryArticleScreen = ({route}) => {
 ***REMOVED***
 ***REMOVED***;
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor={tagAccentColor} />
+
       <FlatList
         data={posts}
         ListHeaderComponent={Header}
         renderItem={renderItem}
+        ListEmptyComponent={ListEmpty}
         onEndReached={fetchNextPage}
         keyExtractor={item => item.id}
       />
-    </SafeAreaView>
+    </View>
   );
 ***REMOVED***
 
@@ -90,6 +108,7 @@ const styles = StyleSheet.create({
     fontSize: 42,
     color: '#fff',
     fontWeight: 'bold',
+    textAlign: 'center',
 ***REMOVED***,
   postCount: {
     fontSize: 18,

@@ -1,25 +1,11 @@
 import React from 'react';
 import {useEffect} from 'react';
+import {useIsFocused} from '@react-navigation/core';
 import {SafeAreaView, FlatList, StyleSheet, StatusBar} from 'react-native';
 import MMKVStorage from 'react-native-mmkv-storage';
 import SinglePost from '../components/SinglePost';
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item',
-***REMOVED***,
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-***REMOVED***,
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-***REMOVED***,
-];
-
-const App = () => {
+const SavedScreen = () => {
   const [data, setData] = React.useState([]);
   const renderItem = ({item}) => (
     <SinglePost
@@ -36,18 +22,25 @@ const App = () => {
     />
   );
   const MMKV = new MMKVStorage.Loader().initialize();
+  const isFocused = useIsFocused();
   useEffect(() => {
     MMKV.getArrayAsync('savedArticles').then(value => {
+      console.log(value.length);
       setData(value);
   ***REMOVED***);
-***REMOVED***, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+***REMOVED***, [isFocused]);
   return (
     <SafeAreaView style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
-      />
+      {data ? (
+        <FlatList
+          data={data}
+          renderItem={renderItem}
+          keyExtractor={item => item.id}
+        />
+      ) : (
+        <></>
+      )}
     </SafeAreaView>
   );
 ***REMOVED***
@@ -55,7 +48,6 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
 ***REMOVED***,
   item: {
     backgroundColor: '#f9c2ff',
@@ -68,4 +60,4 @@ const styles = StyleSheet.create({
 ***REMOVED***,
 });
 
-export default App;
+export default SavedScreen;

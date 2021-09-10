@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {WebView} from 'react-native-webview';
 
 import {
@@ -29,6 +29,7 @@ function ArticleWebView({route, navigation}) {
   const url = route.params.url;
   const item = route.params.fullItem;
   const MMKV = new MMKVStorage.Loader().initialize(); // Returns an MMKV Instance
+  const [saved, setSaved] = React.useState(false);
 
   // make inline html fit to screen
   // close webview and go back
@@ -46,14 +47,31 @@ function ArticleWebView({route, navigation}) {
   ***REMOVED***
 ***REMOVED***;
 
+  useEffect(() => {
+    // check if the articled is saved
+    MMKV.getArrayAsync('savedArticles')
+      .then(value => {
+        if (value !== null) {
+          if (value.some(el => el.id === item.id)) {
+            setSaved(true);
+        ***REMOVED***
+      ***REMOVED***
+    ***REMOVED***)
+      .catch(e => {
+        console.log(e);
+        ToastAndroid.show(
+          'Error while showing saved articles',
+          ToastAndroid.SHORT,
+    ***REMOVED***
+    ***REMOVED***);
+***REMOVED***, []);
+
   // save article to database
   const saveArticle = async () => {
   ***REMOVED***
-      console.log('saving article');
       const currentPosts = await MMKV.getArrayAsync('savedArticles');
       if (currentPosts) {
         const newPosts = [item, ...currentPosts];
-        console.log(currentPosts);
         // save to MMKV
         await MMKV.setArrayAsync('savedArticles', newPosts);
     ***REMOVED*** else {
@@ -61,6 +79,7 @@ function ArticleWebView({route, navigation}) {
         await MMKV.setArrayAsync('savedArticles', [item]);
     ***REMOVED***
       ToastAndroid.show('Article Saved', ToastAndroid.SHORT);
+      setSaved(true);
   ***REMOVED***
       ToastAndroid.shwo(
         'Error Saving Article, please try again',
@@ -69,7 +88,26 @@ function ArticleWebView({route, navigation}) {
       console.log(e);
   ***REMOVED***
 ***REMOVED***;
-
+  const removeArticle = async () => {
+  ***REMOVED***
+      const currentPosts = await MMKV.getArrayAsync('savedArticles');
+      if (currentPosts) {
+        const newPosts = currentPosts.filter(post => post.id !== item.id);
+        // delete the key - Direclty writing would interpolate the new aaray with the old one
+        MMKV.removeItem('savedArticles');
+        // save to MMKV
+        await MMKV.setArrayAsync('savedArticles', newPosts);
+        ToastAndroid.show('Article Removed', ToastAndroid.SHORT);
+    ***REMOVED***
+      setSaved(false);
+  ***REMOVED***
+      ToastAndroid.show(
+        'Error Removing Article, please try again',
+        ToastAndroid.SHORT,
+  ***REMOVED***
+      console.log(e);
+  ***REMOVED***
+***REMOVED***;
   const html = `<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -281,8 +319,10 @@ function ArticleWebView({route, navigation}) {
           <Pressable style={styles.iconView} onPress={openShare}>
             <SharedIcon color="white" />
           </Pressable>
-          <Pressable style={styles.iconView} onPress={saveArticle}>
-            <SaveIcon color="white" filled />
+          <Pressable
+            style={styles.iconView}
+            onPress={saved ? removeArticle : saveArticle}>
+            <SaveIcon color="white" filled={saved} />
           </Pressable>
         </View>
       </View>

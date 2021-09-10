@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {SafeAreaView, FlatList, StyleSheet, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  FlatList,
+  StyleSheet,
+  View,
+  StatusBar,
+  ActivityIndicator,
+} from 'react-native';
 import {useInfiniteQuery} from 'react-query';
 import {grabTags} from '../API/apiConnectors';
 import {CONSTANTS} from '../utils/constants';
@@ -39,13 +46,19 @@ const CatagoryScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      <FlatList
-        data={tags}
-        renderItem={renderItem}
-        onEndReached={fetchNextPage}
-        keyExtractor={item => item.id}
-        contentContainerStyle={styles.contentContainer}
-      />
+      {!tags ? (
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <ActivityIndicator size={70} color={CONSTANTS.accentColor} />
+        </View>
+      ) : (
+        <FlatList
+          data={tags}
+          renderItem={renderItem}
+          onEndReached={fetchNextPage}
+          keyExtractor={item => item.id}
+          contentContainerStyle={styles.contentContainer}
+        />
+      )}
     </SafeAreaView>
   );
 ***REMOVED***
@@ -53,7 +66,6 @@ const CatagoryScreen = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
 ***REMOVED***,
   item: {
     backgroundColor: '#f9c2ff',

@@ -39,7 +39,7 @@ export default function HeroPost() {
               primary_tag: articleData.primary_tag,
               primary_author: articleData.primary_author,
               url: articleData.url,
-              item: articleData,
+              fullItem: articleData,
               publishedDate: articleData.published_at,
               image: articleData.feature_image,
               readingTime: articleData.reading_time,

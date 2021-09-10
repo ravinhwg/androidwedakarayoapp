@@ -1,9 +1,16 @@
 import React, {useEffect, useState} from 'react';
-import {View, FlatList, StyleSheet, StatusBar} from 'react-native';
+import {
+  View,
+  FlatList,
+  StyleSheet,
+  StatusBar,
+  ActivityIndicator,
+} from 'react-native';
 import {useInfiniteQuery} from 'react-query';
 import {getPosts} from '../API/apiConnectors';
 import HeroPost from '../components/HeroPost';
 import SinglePost from '../components/SinglePost';
+import {CONSTANTS} from '../utils/constants';
 
 function HomeScreen() {
   const renderItem = ({item}) => (
@@ -21,7 +28,7 @@ function HomeScreen() {
     />
   );
   const [posts, setPosts] = useState([]);
-  const {status, data, fetchNextPage} = useInfiniteQuery(
+  const {isFetching, data, fetchNextPage} = useInfiniteQuery(
     'grabPostsFromGhost',
     getPosts,
     {
@@ -43,14 +50,21 @@ function HomeScreen() {
     <View style={styles.container}>
       <StatusBar translucent backgroundColor="transparent" />
       <View style={styles.innerContainer}>
-        <FlatList
-          ListHeaderComponent={HeroPost}
-          data={posts}
-          onEndReached={fetchNextPage}
-          renderItem={renderItem}
-          contentContainerStyle={styles.contentContainerStyle}
-          keyExtractor={item => item.id}
-        />
+        {!data ? (
+          <View
+            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            <ActivityIndicator size={70} color={CONSTANTS.accentColor} />
+          </View>
+        ) : (
+          <FlatList
+            ListHeaderComponent={HeroPost}
+            data={posts}
+            onEndReached={fetchNextPage}
+            renderItem={renderItem}
+            contentContainerStyle={styles.contentContainerStyle}
+            keyExtractor={item => item.id}
+          />
+        )}
       </View>
     </View>
   );

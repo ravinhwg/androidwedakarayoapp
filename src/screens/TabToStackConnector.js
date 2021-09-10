@@ -26,8 +26,13 @@ function TabToStackConnector() {
         name="CatagoryScreen"
         component={CatagoryScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
           tabBarLabel: 'Catagories',
+          headerTitle: 'Categories',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: CONSTANTS.accentColor,
+        ***REMOVED***,
           tabBarActiveTintColor: CONSTANTS.accentColor,
           tabBarIcon: ({color}) => <CatagoriesIcon color={color} />,
       ***REMOVED***}
@@ -36,8 +41,13 @@ function TabToStackConnector() {
         name="SavedScreen"
         component={SavedScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
           tabBarLabel: 'Saved',
+          headerTitle: 'Saved',
+          headerTintColor: 'white',
+          headerStyle: {
+            backgroundColor: CONSTANTS.accentColor,
+        ***REMOVED***,
           tabBarActiveTintColor: CONSTANTS.accentColor,
           tabBarIcon: ({color}) => <SavedIcon color={color} />,
       ***REMOVED***}
