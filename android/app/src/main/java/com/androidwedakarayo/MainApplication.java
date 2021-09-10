@@ -1,5 +1,8 @@
 package com.***REMOVED***;
 
+import com.ammarahmed.mmkv.RNMMKVJSIModulePackage; // <- add here
+import com.facebook.react.bridge.JSIModulePackage; // <- add here
+
 import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
@@ -32,6 +35,11 @@ public class MainApplication extends Application implements ReactApplication {
         @Override
         protected String getJSMainModuleName() {
           return "index";
+      ***REMOVED***
+
+        @Override
+        protected JSIModulePackage getJSIModulePackage() {
+            return new RNMMKVJSIModulePackage();
       ***REMOVED***
     ***REMOVED***;
 

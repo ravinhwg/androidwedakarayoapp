@@ -17,6 +17,8 @@ const CatagoryArticleScreen = ({route}) => {
     <SinglePost
       title={item.title}
       html={item.html}
+      url={item.url}
+      item={item}
       primary_tag={item.primary_tag}
       primary_author={item.primary_author}
       excerpt={item.excerpt}

@@ -1,12 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {
-  SafeAreaView,
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
-  StatusBar,
-} from 'react-native';
+import {SafeAreaView, FlatList, StyleSheet, StatusBar} from 'react-native';
 import {useInfiniteQuery} from 'react-query';
 import {grabTags} from '../API/apiConnectors';
 import {CONSTANTS} from '../utils/constants';
@@ -22,6 +15,8 @@ const CatagoryScreen = () => {
       tagSlug={item.slug}
       tagName={item.name}
       tagId={item.id}
+      url={item.url}
+      item={item}
     />
   );
   const [tags, setTags] = useState([]);

@@ -1,11 +1,22 @@
 import React from 'react';
 import {WebView} from 'react-native-webview';
 
-import {View, Text, Dimensions, StatusBar} from 'react-native';
+import {
+  View,
+  Dimensions,
+  StatusBar,
+  StyleSheet,
+  Pressable,
+  Share,
+} from 'react-native';
 import makeDateReadable from '../utils/makeDateReadable';
+import SharedIcon from '../components/Icons/ShareIcon';
+import {CONSTANTS} from '../utils/constants';
+import SaveIcon from '../components/Icons/SaveIcon';
+import CloseIcon from '../components/Icons/CloseIcon';
 
 const {height, width} = Dimensions.get('window');
-function ArticleWebView({route}) {
+function ArticleWebView({route, navigation}) {
   const htmlDoc = route.params.html;
   const title = route.params.title;
   const primaryTag = route.params.primary_tag?.name || '';
@@ -13,7 +24,23 @@ function ArticleWebView({route}) {
   const author = route.params.primary_author;
   const publishedDate = route.params.publishedDate;
   const readingTime = route.params.readingTime;
+  const url = route.params.url;
   // make inline html fit to screen
+  // close webview and go back
+  const goBack = () => {
+    navigation.goBack();
+***REMOVED***;
+  // open share view
+  const openShare = async () => {
+  ***REMOVED***
+      const result = await Share.share({
+        message: url,
+    ***REMOVED***);
+  ***REMOVED***
+      console.log(e);
+  ***REMOVED***
+***REMOVED***;
+
   const html = `<html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -212,14 +239,59 @@ function ArticleWebView({route}) {
 </html>`;
   return (
     <>
-      <StatusBar barStyle="light-content" translucent={false} />
+      <StatusBar
+        barStyle="light-content"
+        translucent={false}
+        backgroundColor={CONSTANTS.accentColor}
+      />
+      <View style={styles.container}>
+        <Pressable style={styles.leftIconContainer} onPress={goBack}>
+          <CloseIcon color="white" />
+        </Pressable>
+        <View style={styles.rightIconContainer}>
+          <Pressable style={styles.iconView} onPress={openShare}>
+            <SharedIcon color="white" />
+          </Pressable>
+          <View style={styles.iconView}>
+            <SaveIcon color="white" filled />
+          </View>
+        </View>
+      </View>
       <WebView
         originWhitelist={['*']}
         source={{html}}
-        style={{width: width, padding: 10, alignSelf: 'center'}}
+        style={styles.webViewStyles}
       />
     </>
   );
 }
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width,
+    backgroundColor: CONSTANTS.accentColor,
+    height: height * 0.06,
+***REMOVED***,
+  iconView: {
+    height: 30,
+    width: 30,
+    marginRight: 15,
+***REMOVED***,
+  rightIconContainer: {
+    flexDirection: 'row',
+***REMOVED***,
+  leftIconContainer: {
+    height: 30,
+    width: 30,
+    marginLeft: 15,
+***REMOVED***,
+  webViewStyles: {
+    width: width,
+    padding: 10,
+    alignSelf: 'center',
+***REMOVED***,
+});
 export default ArticleWebView;

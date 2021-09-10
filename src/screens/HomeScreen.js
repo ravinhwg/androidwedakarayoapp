@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {View, Text, FlatList, StyleSheet, StatusBar} from 'react-native';
+import {View, FlatList, StyleSheet, StatusBar} from 'react-native';
 import {useInfiniteQuery} from 'react-query';
 import {getPosts} from '../API/apiConnectors';
 import HeroPost from '../components/HeroPost';
@@ -16,6 +16,8 @@ function HomeScreen() {
       image={item.feature_image}
       publishedDate={item.published_at}
       readingTime={item.reading_time}
+      url={item.url}
+      item={item}
     />
   );
   const [posts, setPosts] = useState([]);

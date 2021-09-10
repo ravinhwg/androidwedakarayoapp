@@ -22,9 +22,7 @@ export default function HeroPost() {
   const [articleData, setArticleData] = useState({});
   const navigation = useNavigation();
   const isDarkMode = useDarkMode();
-  const removeNewLine = text => {
-    return text.replace(/\n/g, '').trim();
-***REMOVED***;
+
   useEffect(() => {
     if (data) {
       setArticleData(data.posts[0]);
@@ -40,6 +38,8 @@ export default function HeroPost() {
               title: articleData.title,
               primary_tag: articleData.primary_tag,
               primary_author: articleData.primary_author,
+              url: articleData.url,
+              item: articleData,
               publishedDate: articleData.published_at,
               image: articleData.feature_image,
               readingTime: articleData.reading_time,
