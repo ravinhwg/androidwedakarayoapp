@@ -34,7 +34,9 @@ export default function SinglCategory(props) {
       <Image source={{uri: props.featureImage}} style={styles.image} />
       <View
         style={[styles.textContainer, {backgroundColor: props.accentColor}]}>
-        <Text style={styles.textStyleCount}>{props.postCount} POSTS</Text>
+        <Text style={styles.textStyleCount}>
+          {props.postCount} {props.postCount === 1 ? 'POST' : 'POSTS'}
+        </Text>
         <Text style={styles.textStyle}>{props.name}</Text>
       </View>
     </Pressable>

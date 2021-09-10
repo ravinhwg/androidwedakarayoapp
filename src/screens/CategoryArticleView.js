@@ -63,7 +63,9 @@ const CatagoryArticleScreen = ({route}) => {
     return (
       <View style={[styles.heroContainer, {backgroundColor: tagAccentColor}]}>
         <Text style={styles.title}>{tagName}</Text>
-        <Text style={styles.postCount}>{tagPostsCount} POSTS</Text>
+        <Text style={styles.postCount}>
+          {tagPostsCount} {tagPostsCount === 1 ? 'POST' : 'POSTS'}
+        </Text>
       </View>
 ***REMOVED***
 ***REMOVED***;

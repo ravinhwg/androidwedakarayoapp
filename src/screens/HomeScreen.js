@@ -48,7 +48,11 @@ function HomeScreen() {
 
   return (
     <View style={styles.container}>
-      <StatusBar translucent backgroundColor="transparent" />
+      <StatusBar
+        barStyle="light-content"
+        translucent
+        backgroundColor="rgba(43, 182, 115, 0.58)"
+      />
       <View style={styles.innerContainer}>
         {!data ? (
           <View
