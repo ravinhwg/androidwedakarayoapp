@@ -10,6 +10,7 @@
     "lint": "eslint ."
 ***REMOVED***,
   "dependencies": {
+    "@react-native-firebase/analytics": "^12.7.5",
     "@react-native-firebase/app": "^12.7.5",
     "@react-native-firebase/messaging": "^12.7.5",
     "@react-navigation/bottom-tabs": "^6.0.5",

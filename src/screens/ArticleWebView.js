@@ -16,6 +16,7 @@ import {CONSTANTS} from '../utils/constants';
 import SaveIcon from '../components/Icons/SaveIcon';
 import CloseIcon from '../components/Icons/CloseIcon';
 import MMKVStorage from 'react-native-mmkv-storage';
+import {logArticleViewed} from '../analytics/events';
 
 const {height, width} = Dimensions.get('window');
 function ArticleWebView({route, navigation}) {
@@ -65,6 +66,11 @@ function ArticleWebView({route, navigation}) {
     ***REMOVED***
     ***REMOVED***);
 ***REMOVED***, []);
+
+  useEffect(() => {
+    // log the article to analytics
+    logArticleViewed({title});
+***REMOVED***);
 
   // save article to database
   const saveArticle = async () => {
