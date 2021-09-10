@@ -8,12 +8,14 @@ import {
   StyleSheet,
   Pressable,
   Share,
+  ToastAndroid,
 } from 'react-native';
 import makeDateReadable from '../utils/makeDateReadable';
 import SharedIcon from '../components/Icons/ShareIcon';
 import {CONSTANTS} from '../utils/constants';
 import SaveIcon from '../components/Icons/SaveIcon';
 import CloseIcon from '../components/Icons/CloseIcon';
+import MMKVStorage from 'react-native-mmkv-storage';
 
 const {height, width} = Dimensions.get('window');
 function ArticleWebView({route, navigation}) {
@@ -25,6 +27,9 @@ function ArticleWebView({route, navigation}) {
   const publishedDate = route.params.publishedDate;
   const readingTime = route.params.readingTime;
   const url = route.params.url;
+  const item = route.params.fullItem;
+  const MMKV = new MMKVStorage.Loader().initialize(); // Returns an MMKV Instance
+
   // make inline html fit to screen
   // close webview and go back
   const goBack = () => {
@@ -33,9 +38,33 @@ function ArticleWebView({route, navigation}) {
   // open share view
   const openShare = async () => {
   ***REMOVED***
-      const result = await Share.share({
+      await Share.share({
         message: url,
     ***REMOVED***);
+  ***REMOVED***
+      console.log(e);
+  ***REMOVED***
+***REMOVED***;
+
+  // save article to database
+  const saveArticle = async () => {
+  ***REMOVED***
+      console.log('saving article');
+      const currentPosts = await MMKV.getArrayAsync('savedArticles');
+      if (currentPosts) {
+        const newPosts = [item, ...currentPosts];
+        console.log(currentPosts);
+        // save to MMKV
+        await MMKV.setArrayAsync('savedArticles', newPosts);
+    ***REMOVED*** else {
+        // create array if it doesn't exist
+        await MMKV.setArrayAsync('savedArticles', [item]);
+    ***REMOVED***
+      ToastAndroid.show('Article Saved', ToastAndroid.SHORT);
+  ***REMOVED***
+      ToastAndroid.shwo(
+        'Error Saving Article, please try again',
+        ToastAndroid.SHORT,
   ***REMOVED***
       console.log(e);
   ***REMOVED***
@@ -252,9 +281,9 @@ function ArticleWebView({route, navigation}) {
           <Pressable style={styles.iconView} onPress={openShare}>
             <SharedIcon color="white" />
           </Pressable>
-          <View style={styles.iconView}>
+          <Pressable style={styles.iconView} onPress={saveArticle}>
             <SaveIcon color="white" filled />
-          </View>
+          </Pressable>
         </View>
       </View>
       <WebView
