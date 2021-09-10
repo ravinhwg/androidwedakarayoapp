@@ -4,6 +4,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabToStackConnector from './src/screens/TabToStackConnector';
 import ArticleWebView from './src/screens/ArticleWebView';
+import CatagoryArticleScreen from './src/screens/CategoryArticleView';
 
 const Stack = createNativeStackNavigator();
 const queryClient = new QueryClient();
@@ -21,6 +22,11 @@ export default function App() {
           <Stack.Screen
             name="ArticleWebView"
             component={ArticleWebView}
+            options={{headerShown: false}}
+          />
+          <Stack.Screen
+            name="CategoryArticles"
+            component={CatagoryArticleScreen}
             options={{headerShown: false}}
           />
         </Stack.Navigator>
