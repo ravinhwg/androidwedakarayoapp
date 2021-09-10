@@ -1,10 +1,20 @@
 import React from 'react';
 import {useEffect} from 'react';
 import {useIsFocused} from '@react-navigation/core';
-import {SafeAreaView, FlatList, StyleSheet, StatusBar} from 'react-native';
+import {
+  SafeAreaView,
+  FlatList,
+  StyleSheet,
+  View,
+  Text,
+  Dimensions,
+} from 'react-native';
 import MMKVStorage from 'react-native-mmkv-storage';
 import SinglePost from '../components/SinglePost';
+import SaveIcon from '../components/Icons/SaveIcon';
+import {CONSTANTS} from '../utils/constants';
 
+const {width} = Dimensions.get('window');
 const SavedScreen = () => {
   const [data, setData] = React.useState([]);
   const renderItem = ({item}) => (
@@ -30,16 +40,29 @@ const SavedScreen = () => {
   ***REMOVED***);
     // eslint-disable-next-line react-hooks/exhaustive-deps
 ***REMOVED***, [isFocused]);
+
+  const ListEmpty = () => {
+    return (
+      <View style={styles.emptyContainer}>
+        <View style={{height: 150, width: 150}}>
+          <SaveIcon color={CONSTANTS.accentColor} />
+        </View>
+        <Text style={styles.emptyText}>
+          Saved articles will be displayed here!
+        </Text>
+      </View>
+***REMOVED***
+***REMOVED***;
   return (
     <SafeAreaView style={styles.container}>
-      {data ? (
+      {!data.length ? (
+        <ListEmpty />
+      ) : (
         <FlatList
           data={data}
           renderItem={renderItem}
           keyExtractor={item => item.id}
         />
-      ) : (
-        <></>
       )}
     </SafeAreaView>
   );
@@ -57,6 +80,17 @@ const styles = StyleSheet.create({
 ***REMOVED***,
   title: {
     fontSize: 32,
+***REMOVED***,
+  emptyText: {
+    width: width - 140,
+    textAlign: 'center',
+    fontSize: 18,
+    fontWeight: 'bold',
+***REMOVED***,
+  emptyContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
 ***REMOVED***,
 });
 

@@ -27,7 +27,7 @@ function TabToStackConnector() {
         component={CatagoryScreen}
         options={{
           headerShown: true,
-          tabBarLabel: 'Catagories',
+          tabBarLabel: 'Categories',
           headerTitle: 'Categories',
           headerTintColor: 'white',
           headerStyle: {

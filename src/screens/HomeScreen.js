@@ -33,7 +33,7 @@ function HomeScreen() {
     getPosts,
     {
       getNextPageParam: (lastGroup, allGroups) => {
-        return lastGroup.meta.pagination.next;
+        return lastGroup.meta.pagination.next || undefined;
     ***REMOVED***,
   ***REMOVED***,
   );

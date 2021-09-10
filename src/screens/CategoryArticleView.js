@@ -38,7 +38,7 @@ const CatagoryArticleScreen = ({route}) => {
     grabArticlesFromTag,
     {
       getNextPageParam: (lastGroup, allGroups) => {
-        return lastGroup.meta.pagination.next;
+        return lastGroup.meta.pagination.next || undefined;
     ***REMOVED***,
   ***REMOVED***,
   );
@@ -50,7 +50,7 @@ const CatagoryArticleScreen = ({route}) => {
         setPosts(prevState => [...prevState, post]);
     ***REMOVED***);
   ***REMOVED***
-***REMOVED***, [data, isFocused]);
+***REMOVED***, [data]);
   console.log('isloading', isLoading);
   const ListEmpty = () => (
     <View

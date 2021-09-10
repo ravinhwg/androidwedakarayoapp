@@ -32,7 +32,7 @@ const CatagoryScreen = () => {
     grabTags,
     {
       getNextPageParam: (lastGroup, allGroups) => {
-        return lastGroup.meta.pagination.next || null;
+        return lastGroup.meta.pagination.next || undefined;
     ***REMOVED***,
   ***REMOVED***,
   );
@@ -46,7 +46,7 @@ const CatagoryScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <StatusBar barStyle="dark-content" />
-      {!tags ? (
+      {!tags.length ? (
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
           <ActivityIndicator size={70} color={CONSTANTS.accentColor} />
         </View>
