@@ -1,4 +1,4 @@
-package com.***REMOVED***;
+package com.androidwedakarayo;
 
 import com.ammarahmed.mmkv.RNMMKVJSIModulePackage; // <- add here
 import com.facebook.react.bridge.JSIModulePackage; // <- add here
@@ -70,7 +70,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.***REMOVED***.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.androidwedakarayo.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);

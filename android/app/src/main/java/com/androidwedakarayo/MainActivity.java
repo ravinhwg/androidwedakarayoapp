@@ -1,4 +1,4 @@
-package com.***REMOVED***;
+package com.androidwedakarayo;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
@@ -12,7 +12,7 @@ public class MainActivity extends ReactActivity {
    */
   @Override
   protected String getMainComponentName() {
-    return "***REMOVED***";
+    return "androidwedakarayo";
   }
   @Override
   protected void onCreate(Bundle savedInstanceState) {

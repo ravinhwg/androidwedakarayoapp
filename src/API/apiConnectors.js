@@ -1,11 +1,11 @@
 import axios from 'axios';
-
-// configure axios to use baseURL and set headers for ***REMOVED***.com
-axios.defaults.baseURL = 'https://***REMOVED***.com/ghost/api/v3/content';
+import GhostCredentials from '../../GHOST_API_KEY.json';
+// configure axios to use baseURL and set headers for androidwedakarayo.com
+axios.defaults.baseURL = 'https://androidwedakarayo.com/ghost/api/v3/content';
 axios.defaults.headers.common['Content-Type'] = 'application/json';
 
 // Android wedakarayo api Key
-const API_KEY = '***REMOVED***';
+const API_KEY = GhostCredentials.GHOST_API_KEY;
 
 const getPosts = async ({pageParam = 1}) => {
   try {
