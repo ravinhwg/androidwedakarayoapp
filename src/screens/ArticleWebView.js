@@ -290,7 +290,7 @@ function ArticleWebView({route, navigation}) {
   </head>
   <body>
   <p style="font-weight: bold; color: #757575; margin-top:5px; letter-spacing: .2rem">${primaryTag.toUpperCase()}</p>
-  <h1 style="font-weight: bold; margin-bottom:10px; font-size: 2rem">${title}</h1>
+  <h1 style="font-weight: bold; margin-bottom:10px; font-size: 1.5rem">${title}</h1>
   <div style="display: flex; flex-direction:row; flex: 1;">
   <img style="height: 50px; width: 50px; border-radius: 100px; margin-bottom: 50px; object-fit: cover" src="${
     author.profile_image
