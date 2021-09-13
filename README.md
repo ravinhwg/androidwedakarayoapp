@@ -8,13 +8,13 @@ This application is a GhostCMS client built using [React Native](https://reactna
 
 ### Pre built
 
-Download the latest pre-packaged version from Google Play.
+Download the latest pre-packaged version from [Google Play](https://play.google.com/store/apps/details?id=com.androidwedakarayo).
 
 ### Build yourself (Android)
 
 1. For this you first need to install React Native on your system.
-2. Install node and npm
-3. clone this project.
+2. Install node and npm.
+3. Clone this project.
 4. Install the dependencies.
 
 ```bash
