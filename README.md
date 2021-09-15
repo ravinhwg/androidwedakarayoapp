@@ -35,7 +35,8 @@ This project is not configured to run on iOS yet. Therefore a bit more work is n
 
 1. Install [React-native](https://www.reactnative.dev).
 2. Configure [react-navigation](https://reactnavigation.org/docs/getting-started/), [react-native-firebase](https://rnfirebase.io/) and [react-native-svg](https://github.com/react-native-svg/react-native-svg) - Follow the iOS section.
-3. Follow instructions on [React Native docs](https://reactnative.dev/docs/0.64/publishing-to-app-store) to build an iOS binary.
+3. Configure a new Firebase app with valid credentials.
+4. Follow instructions on [React Native docs](https://reactnative.dev/docs/0.64/publishing-to-app-store) to build an iOS binary.
 
 ## Contributing
 
@@ -45,7 +46,7 @@ Please use the demo Ghost API for developement.
 API_KEY: `22444f78447824223cefc48062`  
 BASE_URL: `demo.ghost.io/ghost/api/v3/content`
 
-This project uses semver (major.minor.patch) use ` npm version` command to version this app. Native files would be updated automatically using `react-native-version`
+This project uses semver (major.minor.patch) use ` npm version` command to version this app. Native files would be updated automatically using `react-native-version`. You need npx for this to work. (Comes preinstalled with npm >= 5.2) If you don't have npx please first install `react-native-version` globally by running `npm intall -g react-native-version`.
 
 ## License
 
