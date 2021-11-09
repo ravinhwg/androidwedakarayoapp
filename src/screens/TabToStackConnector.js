@@ -7,9 +7,11 @@ import {CONSTANTS} from '../utils/constants';
 import HomeIcon from '../components/Icons/HomeIcon';
 import CatagoriesIcon from '../components/Icons/CatagoriesIcon';
 import SavedIcon from '../components/Icons/SavedIcon';
+import {useTheme} from '@react-navigation/native';
 const Tab = createBottomTabNavigator();
 
 function TabToStackConnector() {
+  const {colors} = useTheme();
   return (
     <Tab.Navigator>
       <Tab.Screen
@@ -18,6 +20,7 @@ function TabToStackConnector() {
         options={{
           headerShown: false,
           tabBarLabel: 'Home',
+          tabBarInactiveTintColor: colors.text,
           tabBarActiveTintColor: CONSTANTS.accentColor,
           tabBarIcon: ({color}) => <HomeIcon color={color} />,
         }}
@@ -30,6 +33,7 @@ function TabToStackConnector() {
           tabBarLabel: 'Categories',
           headerTitle: 'Categories',
           headerTintColor: 'white',
+          tabBarInactiveTintColor: colors.text,
           headerStyle: {
             backgroundColor: CONSTANTS.accentColor,
           },
@@ -45,6 +49,7 @@ function TabToStackConnector() {
           tabBarLabel: 'Saved',
           headerTitle: 'Saved',
           headerTintColor: 'white',
+          tabBarInactiveTintColor: colors.text,
           headerStyle: {
             backgroundColor: CONSTANTS.accentColor,
           },
