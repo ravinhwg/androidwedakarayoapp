@@ -315,7 +315,7 @@ function ArticleWebView({route, navigation}) {
   </body>
 </html>`;
   return (
-    <>
+    <View style={[styles.parent, {backgroundColor: colors.background}]}>
       <StatusBar
         barStyle="light-content"
         translucent={false}
@@ -341,11 +341,12 @@ function ArticleWebView({route, navigation}) {
         source={{html}}
         style={styles.webViewStyles}
       />
-    </>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  parent: {flex: 1},
   container: {
     flexDirection: 'row',
     justifyContent: 'space-between',
