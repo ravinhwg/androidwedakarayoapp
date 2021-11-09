@@ -1,6 +1,11 @@
 import * as React from 'react';
+import {useColorScheme} from 'react-native';
 import {QueryClient, QueryClientProvider} from 'react-query';
-import {NavigationContainer} from '@react-navigation/native';
+import {
+  NavigationContainer,
+  DarkTheme,
+  DefaultTheme,
+} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import TabToStackConnector from './src/screens/TabToStackConnector';
 import ArticleWebView from './src/screens/ArticleWebView';
@@ -10,9 +15,12 @@ const Stack = createNativeStackNavigator();
 const queryClient = new QueryClient();
 
 export default function App() {
+  const colorScheme = useColorScheme();
+
   return (
     <QueryClientProvider client={queryClient}>
-      <NavigationContainer>
+      <NavigationContainer
+        theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
         <Stack.Navigator>
           <Stack.Screen
             name="Home"
