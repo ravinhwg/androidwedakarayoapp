@@ -16,6 +16,7 @@ import {CONSTANTS} from '../utils/constants';
 import SaveIcon from '../components/Icons/SaveIcon';
 import CloseIcon from '../components/Icons/CloseIcon';
 import MMKVStorage from 'react-native-mmkv-storage';
+import {useTheme} from '@react-navigation/native';
 import {logArticleViewed} from '../analytics/events';
 
 const {height, width} = Dimensions.get('window');
@@ -31,6 +32,9 @@ function ArticleWebView({route, navigation}) {
   const item = route.params.fullItem;
   const MMKV = new MMKVStorage.Loader().initialize(); // Returns an MMKV Instance
   const [saved, setSaved] = React.useState(false);
+
+  // grab current theme from react navigation
+  const {colors} = useTheme();
 
   // make inline html fit to screen
   // close webview and go back
@@ -124,8 +128,8 @@ function ArticleWebView({route, navigation}) {
         font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
         font-size: 14px;
         line-height: 1.42857143;
-        color: #333;
-        background-color: #fff;
+        color: ${colors.text};
+        background-color: ${colors.background};
         word-wrap: break-word;
       }
       img{
@@ -137,7 +141,7 @@ function ArticleWebView({route, navigation}) {
         font-size: 16px;
       }
       a {
-        color: #000;
+        color: ${colors.text};
         text-decoration: none;
       }
       a:hover,
@@ -296,7 +300,7 @@ function ArticleWebView({route, navigation}) {
     author.profile_image
   }" />
   <div>
-  <p style=" margin-left: 15px; color: #000;">${author.name}</p>
+  <p style=" margin-left: 15px; color: ${colors.text}">${author.name}</p>
   <div style="display: flex; flex-direction:row; flex: 1;">
   <div style=" margin-top: -10px; margin-left: 15px; color: #757575;">${makeDateReadable(
     publishedDate,
@@ -317,7 +321,7 @@ function ArticleWebView({route, navigation}) {
         translucent={false}
         backgroundColor={CONSTANTS.accentColor}
       />
-      <View style={styles.container}>
+      <View style={[styles.container]}>
         <Pressable style={styles.leftIconContainer} onPress={goBack}>
           <CloseIcon color="white" />
         </Pressable>
