@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import useDarkMode from '../utils/hooks/useDarkMode';
 import makeDateReadable from '../utils/makeDateReadable';
+import {useTheme} from '@react-navigation/native';
 
 const {height, width} = Dimensions.get('window');
 
@@ -30,6 +31,7 @@ export default function SinglePost({
 }) {
   const isDarkMode = useDarkMode();
   const navigation = useNavigation();
+  const {colors} = useTheme();
   const removeNewLine = text => {
     return text.replace(/\n/g, '').trim();
   };
@@ -54,7 +56,7 @@ export default function SinglePost({
           readingTime,
         });
       }}
-      style={[styles.container, {backgroundColor: '#fff'}]}>
+      style={[styles.container, {backgroundColor: colors.card}]}>
       <Image
         source={{
           uri: image,
@@ -73,7 +75,7 @@ export default function SinglePost({
             {readingTime} min read
           </Text>
         </View>
-        <Text style={styles.headingText}>{title}</Text>
+        <Text style={[styles.headingText, {color: colors.text}]}>{title}</Text>
         <Text style={styles.excerptText} numberOfLines={5}>
           {removeNewLine(excerpt)}
         </Text>
@@ -103,7 +105,6 @@ const styles = StyleSheet.create({
     width: width - 30,
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'black',
   },
   excerptText: {
     marginTop: 20,
