@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {useColorScheme} from 'react-native';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import {
@@ -16,7 +16,9 @@ const queryClient = new QueryClient();
 
 export default function App() {
   const colorScheme = useColorScheme();
+  console.log('colorScheme', colorScheme);
 
+  // listen to color scheme changes
   return (
     <QueryClientProvider client={queryClient}>
       <NavigationContainer
