@@ -13,6 +13,7 @@ import MMKVStorage from 'react-native-mmkv-storage';
 import SinglePost from '../components/SinglePost';
 import SaveIcon from '../components/Icons/SaveIcon';
 import {CONSTANTS} from '../utils/constants';
+import {useTheme} from '@react-navigation/native';
 
 const {width} = Dimensions.get('window');
 const SavedScreen = () => {
@@ -42,12 +43,14 @@ const SavedScreen = () => {
   }, [isFocused]);
 
   const ListEmpty = () => {
+    const {colors} = useTheme();
+
     return (
-      <View style={styles.emptyContainer}>
+      <View style={[styles.emptyContainer]}>
         <View style={{height: 150, width: 150}}>
           <SaveIcon color={CONSTANTS.accentColor} />
         </View>
-        <Text style={styles.emptyText}>
+        <Text style={[styles.emptyText, {color: colors.text}]}>
           Saved articles will be displayed here!
         </Text>
       </View>
@@ -84,7 +87,7 @@ const styles = StyleSheet.create({
   emptyText: {
     width: width - 140,
     textAlign: 'center',
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
   },
   emptyContainer: {
